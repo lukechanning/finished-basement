@@ -1,6 +1,33 @@
+.top-bar-container, .contain-to-grid {
+  background: #444444;
+  padding-top: 3px;
+}
+
+.top-bar {
+  background: transparent;
+  ul {
+    li {
+      background: transparent;
+    }
+    a {
+      background: transparent !important;
+      text-decoration: none;
+      text-shadow: 0px -2px 0px #202020;
+      letter-spacing: 1.5px;
+      &:hover {
+        background: #333 !important;
+      }
+    }
+  }
+}
+
 // larger screen styles
 
 @media only screen and (min-width: 40em) {
+  
+  .top-bar-container {
+    border-top: 2px solid $red;
+  }
 
   .top-bar {
     text-align: center;
@@ -11,9 +38,18 @@
   }
 
   .logo {
+    position: absolute;
+    width: 200px;
+    max-width: 200px !important;
     left: 5px;
     top: -2px;
-    position: absolute;
+    padding: 1rem 0;
+    background: $red;
+    box-shadow: 0 2px 5px rgba(25,25,25,0.65);
+    z-index: 250;
+    a:hover {
+      background: transparent !important;
+    }
   }
 }
 

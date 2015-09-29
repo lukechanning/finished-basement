@@ -65,13 +65,15 @@
 */
 
 @import "site/global";
+@import 'site/variables';
 @import "site/wp-admin";
-@import "site/topbar";
 @import "site/front";
 @import "site/featured";
 @import "site/footer";
 
-// Home specific content
+// Theme specific content
+  @import "site/topbar";
   @import "site/hero";
   @import "site/owl";
   @import "site/home";
+  

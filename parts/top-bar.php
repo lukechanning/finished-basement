@@ -13,10 +13,21 @@
       <ul class="title-area">
         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        
+        <?php if( get_theme_mod( 'basement_logo') ) : ?>
+        <div class="logo">
+            <a href='/'>
+            <img src='<?php echo esc_url( get_theme_mod( 'basement_logo' ) ); ?> 'alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
+            </a>
+        </div>
+        <?php else: ?>
+            <li class="name">
+                <h1><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+            </li>
+        <?php endif; ?>
+        
       </ul>
-      <div class="logo">
-        <a href="http://zurb.com/stickers/images/intro-foundation.png"><img src="http://zurb.com/stickers/images/intro-foundation.png" /></a>
-      </div>
+  
       <section class="top-bar-section">
         <!-- Right Nav Section -->
         <ul class="center-buttons">
