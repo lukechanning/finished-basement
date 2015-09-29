@@ -1,0 +1,19 @@
+//Style specific to the homepage
+
+body.home {
+    
+    //Let's monkey with our layout a little
+    .row {
+        max-width: 100%;
+    }
+        
+    .home-content {
+        padding: 0 !important;
+    }
+    
+    header.contain-to-grid {
+        margin-bottom: 0 !important;
+        padding: 25px 0;
+    }
+    
+}

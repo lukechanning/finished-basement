@@ -9,16 +9,19 @@
 
 ?>
 <div class="top-bar-container contain-to-grid">
-    <nav class="top-bar" data-topbar role="navigation">
-        <ul class="title-area top-bar-<?php echo apply_filters( 'filter_mobile_nav_position', 'mobile_nav_position' ); ?>">
-            <li class="name">
-                <h1><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-            </li>
-            <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
-        </ul>
-        <section class="top-bar-section">
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+      <div class="logo">
+        <a href="http://zurb.com/stickers/images/intro-foundation.png"><img src="http://zurb.com/stickers/images/intro-foundation.png" /></a>
+      </div>
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="center-buttons">
             <?php foundationpress_top_bar_l(); ?>
-            <?php foundationpress_top_bar_r(); ?>
-        </section>
+        </ul>
+      </section>
     </nav>
 </div>

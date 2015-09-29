@@ -70,3 +70,8 @@
 @import "site/front";
 @import "site/featured";
 @import "site/footer";
+
+// Home specific content
+  @import "site/hero";
+  @import "site/owl";
+  @import "site/home";

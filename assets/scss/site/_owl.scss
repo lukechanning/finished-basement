@@ -1,0 +1,11 @@
+//Let's add some custom styling
+.owl-carousel {
+    
+    //Fix that navigation, so ugly!
+    .owl-dots {
+        background-color: $oil;
+        margin-top: 0 !important;
+        padding: rem-calc(5px) 0;
+    }
+    
+}

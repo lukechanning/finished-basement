@@ -32,5 +32,17 @@
 
 <?php wp_footer(); ?>
 <?php do_action( 'foundationpress_before_closing_body' ); ?>
+
+<!-- Let's add the Owl Carousel -->
+<script src="/wp-content/themes/finished-basement/assets/components/owl.carousel/dist/owl.carousel.min.js"></script>
+<script type="text/javascript">
+    	jQuery('.owl-carousel').owlCarousel({
+            loop:true,
+            items: 1,
+            center: true,
+            margin:10
+        });	
+</script>
+
 </body>
 </html>
