@@ -42,6 +42,12 @@
             center: true,
             margin:10
         });	
+       jQuery('.owl-carousel-properties').owlCarousel({
+            items: 4,
+            margin:20,
+            nav:true,
+            lazyLoad: true,
+        });	 
 </script>
 
 </body>

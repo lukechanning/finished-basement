@@ -16,4 +16,13 @@ body.home {
         padding: 25px 0;
     }
     
+    // Let's style up the middle section
+    
+    .home-middle {
+        padding: 3rem 2rem;
+        .owl-item {
+            float: left;
+        }
+    }
+    
 }
