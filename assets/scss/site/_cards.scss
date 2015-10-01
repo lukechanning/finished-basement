@@ -22,11 +22,14 @@
 			border: 1px solid #757D75;
 			border-radius: 50%;
 		}
-		img.post-icon {
-			position: absolute;
-			width: 3rem;
-			border-radius: 50%;
-			margin-top: -3rem;
-		}
+		.post-icon img {
+    		position: absolute;
+    		width: 3rem;
+    		border-radius: 50%;
+    		margin-top: -3rem;
+    	}
 	}
+    img {
+        width: 100%;
+    }
 }
