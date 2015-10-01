@@ -3,9 +3,9 @@
 //A. Add Our custom areas for basement
 
     function basement_customize_register( $wp_customize ) {
-        //Add Custom Header
+        //Add Custom Logo
         $wp_customize->add_section( 'basement_logo_section' , array(
-            'title'       => __( 'basement Logo', 'foundation' ),
+            'title'       => __( 'Basement Logo', 'foundation' ),
             'priority'   => 30,
             'description' => 'Upload a logo to replace the default basement name and description in the header',
         ) );
@@ -16,6 +16,35 @@
             'section' => 'basement_logo_section',
             'settings' => 'basement_logo',
         ) ) );
+        
+        //Add Home CTA Image
+        $wp_customize->add_section( 'basement_cta_section' , array(
+            'title'       => __( 'Basement CTA', 'foundation' ),
+            'priority'   => 40,
+            'description' => 'Upload a call-to-action hero photo to replace the default on the homepage',
+        ) );
+        $wp_customize->add_setting( 'basement_cta' );
+        $wp_customize->add_control( new WP_Customize_Image_Control(
+        $wp_customize, 'basement_cta', array(
+            'label'   => __( 'CTA', 'foundation' ),
+            'section' => 'basement_cta_section',
+            'settings' => 'basement_cta',
+        ) ) );
+        
+        //Add Home CTA Background Image
+        $wp_customize->add_section( 'basement_cta-bg_section' , array(
+            'title'       => __( 'Basement CTA Background', 'foundation' ),
+            'priority'   => 40,
+            'description' => 'Upload an image to use as the call-to-action section background',
+        ) );
+        $wp_customize->add_setting( 'basement_cta-bg' );
+        $wp_customize->add_control( new WP_Customize_Image_Control(
+        $wp_customize, 'basement_cta-bg', array(
+            'label'   => __( 'CTA BG', 'foundation' ),
+            'section' => 'basement_cta-bg_section',
+            'settings' => 'basement_cta-bg',
+        ) ) );
+        
     }
     add_action( 'customize_register', 'basement_customize_register' );
 

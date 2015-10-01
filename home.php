@@ -9,6 +9,8 @@
 	 get_template_part( 'parts/hero-slider' );
 	 //Fire off the middle
 	 get_template_part( 'parts/home-middle' ); 
+	 //Then get the CTA
+	 get_template_part( 'parts/home-cta' ); 
 	 
 	 ?>
 	    

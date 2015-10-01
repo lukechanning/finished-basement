@@ -18,6 +18,16 @@ function foundationpress_sidebar_widgets() {
 	  'before_title' => '<h6>',
 	  'after_title' => '</h6>',
 	));
+	
+	register_sidebar(array(
+	  'id' => 'home-cta',
+	  'name' => __( 'Home CTA Content', 'foundationpress' ),
+	  'description' => __( 'Drag widgets to this container for the Home CTA section', 'foundationpress' ),
+	  'before_widget' => '<div class="large-8 columns excerpt">',
+	  'after_widget' => '</div>',
+	  'before_title' => '<h2>',
+	  'after_title' => '</h2>',
+	));
 
 	register_sidebar(array(
 	  'id' => 'footer-widgets',
