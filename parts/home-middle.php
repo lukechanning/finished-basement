@@ -21,7 +21,7 @@
                         </div>
                         <p class="post-author">By <a href="<?php $author ?>"><?php the_author(); ?></a></p>
                         <h4><?php the_title(); ?></h4>
-                        <p><?php echo apply_filters('the_content', substr(get_the_content(), 0, 200) ); ?></p>
+                        <p><?php echo apply_filters('the_content', substr(get_the_content(), 0, 125) ); ?></p>
                         <p>
                           <a href="<?php echo esc_url($permalink); ?>">Read on...</a> 
                         </p>

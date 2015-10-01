@@ -1,0 +1,19 @@
+body.home {
+    @media #{$small-up} {
+    	.home-cta {
+    	    position: relative;
+    		background-size: cover;
+    		background-position: center;
+    		background-repeat: no-repeat;
+    		margin: 0 0 rem-calc(32) 0;
+    		position: relative;
+    		height: rem-calc(200);
+    	}
+    }
+    
+    @media #{$medium-up} {
+    	.home-cta {
+    	    height: rem-calc(300);
+    	}
+    }
+}
