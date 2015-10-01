@@ -27,6 +27,9 @@
     top: 50%;
     transform: translateY(-50%);
   }
+  p, a {
+    color: $oil !important;
+  }
   h2 {
     color: $white;
   }
