@@ -12,11 +12,28 @@
 ?>
 
 </section>
-<footer class="row">
-	<?php do_action( 'foundationpress_before_footer' ); ?>
-	<?php dynamic_sidebar( 'footer-widgets' ); ?>
-	<?php do_action( 'foundationpress_after_footer' ); ?>
+
+<?php do_action( 'foundationpress_before_footer' ); ?>
+
+<footer class="footer">
+  <div class="row">
+  	<?php dynamic_sidebar( 'footer-widgets' ); ?>
+    <div class="small-12 columns">
+      <p class="slogan">Finger-lickin' good</p>
+      <p class="links">
+        <a href="#">Home</a>
+        <a href="#">Blog</a>
+        <a href="#">Pricing</a>
+        <a href="#">About</a>
+        <a href="#">Faq</a>
+        <a href="#">Contact</a>
+      </p>
+      <p class="copywrite">Copywrite not copypwrite © 2015</p>
+    </div>
+  </div>
 </footer>
+
+<?php do_action( 'foundationpress_after_footer' ); ?>
 
 <?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) == 'offcanvas' ) : ?>
 

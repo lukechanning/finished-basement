@@ -28,6 +28,26 @@ function foundationpress_sidebar_widgets() {
 	  'before_title' => '<h2>',
 	  'after_title' => '</h2>',
 	));
+	
+	register_sidebar(array(
+	  'id' => 'home-cta-buttons',
+	  'name' => __( 'Home CTA Buttons (Left)', 'foundationpress' ),
+	  'description' => __( 'Drag widgets to this container for the Home CTA Buttons (Left)', 'foundationpress' ),
+	  'before_widget' => '<div class="large-4 medium-12 buttons columns">',
+	  'after_widget' => '</div>',
+	  'before_title' => '<h2>',
+	  'after_title' => '</h2>',
+	));
+
+	register_sidebar(array(
+	  'id' => 'home-cta-buttons-right',
+	  'name' => __( 'Home CTA Buttons (Right)', 'foundationpress' ),
+	  'description' => __( 'Drag widgets to this container for the Home CTA Buttons (Right)', 'foundationpress' ),
+	  'before_widget' => '<div class="large-4 medium-12 buttons columns">',
+	  'after_widget' => '</div>',
+	  'before_title' => '<h2>',
+	  'after_title' => '</h2>',
+	));
 
 	register_sidebar(array(
 	  'id' => 'footer-widgets',

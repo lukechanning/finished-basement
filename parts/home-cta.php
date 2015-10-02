@@ -27,6 +27,30 @@
                 <h2>The Best Around</h2>
                 <p>Migas cray gluten-free, photo booth Brooklyn cronut keffiyeh. Synth lo-fi Kickstarter art party, scenester hoodie heirloom brunch health goth lumbersexual YOLO photo booth fixie raw denim. Tilde lo-fi Vice bicycle rights shabby chic literally, Kickstarter four dollar toast cronut chambray. Actually wayfarers banh mi flannel meditation.</p>
                 </div>
+                
+                <div class="large-8 columns">
+
+                        <?php
+                        if ( is_active_sidebar('home-cta-buttons') ):
+                            dynamic_sidebar('home-cta-buttons');
+                        else:
+                            ?>
+                            <a href="#" class="button">Left</a>
+                            <?php
+                        endif;
+                        ?>
+                        
+                        <?php
+                        if ( is_active_sidebar('home-cta-buttons-right') ):
+                            dynamic_sidebar('home-cta-buttons-right');
+                        else:
+                            ?>
+                            <a href="#" class="button">Right</a>
+                            <?php
+                        endif;
+                        ?>
+                </div>
+
             </div>
             <?php
         endif;

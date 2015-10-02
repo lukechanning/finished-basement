@@ -5,8 +5,7 @@
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
-		margin: 0 0 rem-calc(32) 0;
-		position: relative;
+		margin: 0;
         .excerpt {
             margin-top: rem-calc(75px);
             font-size: rem-calc(21px);
@@ -30,6 +29,24 @@
                 padding-top: rem-calc(24px);
             }
         }
+        .buttons {
+            margin-top: 1rem;
+            text-align: center;
+            float: left !important;
+            .button {
+                width: 100%;
+                background: transparent;
+                color: $white;
+                text-transform: uppercase;
+                font-weight: 700;
+                font-size: rem-calc(18px);
+                border: rem-calc(3px) solid $white;
+                &:hover {
+                    background: $white;
+                    color: $oil;
+                }
+            }
+        }
 	}
 }
 
@@ -41,7 +58,6 @@
 
 @media #{$small-only} {
     section.home-cta {
-        padding-bottom: 1rem;
-        margin-bottom: 1rem;
+        padding-bottom: 2rem;
     }
 }
