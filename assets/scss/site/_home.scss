@@ -24,6 +24,19 @@ body.home {
         .owl-item, .owl-stage-outer {
             float: left;
         }
+        .info-icons {
+            padding: 1rem 0;
+            font-size: 14px;
+            text-align: left;
+            color: #666;
+            span {
+                margin-right: 10px;
+            }
+        }
+        .post-author {
+            text-align: left;
+            font-weight: 600;
+        }
     }
     
 }

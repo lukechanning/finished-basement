@@ -26,6 +26,8 @@
 		<link rel="stylesheet" href="/wp-content/themes/finished-basement/assets/components/owl.carousel/dist/assets/owl.carousel.min.css" />
 		<link rel="stylesheet" href="/wp-content/themes/finished-basement/assets/components/owl.carousel/dist/assets/owl.theme.default.min.css" />
 
+		<!-- Get some icons, yo -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
 		<?php wp_head(); ?>
 	</head>
