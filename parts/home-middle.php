@@ -28,20 +28,8 @@
                         <div class="post-icon">
                             <?php echo get_avatar($authID, "50px"); ?>
                         </div>
-                        <div class="info-icons">
-                            <?php if($squarefeet != '') : ?>
-                                <span class="squarefeet"><i class="fa fa-home"></i> <?php echo $squarefeet; ?> sq ft</span>
-                            <?php endif; ?>
-                            <?php if($bedrooms != '') : ?>
-                                <span class="bedrooms"><i class="fa fa-bed"></i> <?php echo $bedrooms; ?></span>
-                            <?php endif; ?>
-                            <?php if($bathrooms != '') : ?>
-                                <span class="bathrooms"><i class="fa fa-tint"></i> <?php echo $bathrooms; ?></span>
-                            <?php endif; ?>
-                            <?php if($price != '') : ?>
-                                <span class="price"><i class="fa fa-money"></i> <?php echo $price; ?></span>
-                            <?php endif; ?>
-                        </div>
+                       <?php get_template_part('parts/info-icons'); ?>
+                       
                         <p class="post-author">Agent <a href="<?php $author ?>"><?php the_author(); ?></a></p>
                         <h4><?php the_title(); ?></h4>
                         <p><?php echo apply_filters('the_content', substr(get_the_content(), 0, 125) ); ?></p>

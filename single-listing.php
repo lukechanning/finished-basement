@@ -11,25 +11,29 @@ get_header(); ?>
 
 <?php get_template_part( 'parts/featured-image' ); ?>
 
-	<div id="address">
-		<div class="address-bar row">
-			<div class="large-8 columns">
-			<?php
-				//Let's define some variables
-		    	$address = listing_address_get_meta( 'listing_address_property_address_in_full' );
-		    	$postal = listing_address_get_meta( 'listing_address_postal_code' );
-		    	$country = listing_address_get_meta( 'listing_address_property_country' );
-		    	$find = array('/\s+/','/,/');
-		    	$replace = array('+','%2C');
-			    $searchString = strtolower( preg_replace($find, $replace, $address) );
-				?>
-				<i class="fa fa-map-marker fa-2x"></i> <a target="_blank" href="https://www.google.com/maps?&q=<?php echo $searchString ?>"><?php echo $address, " ", $postal, " ", $country; ?></a>
-			</div>
-			<?php if ( ! dynamic_sidebar('contact-text') ) : ?>
-				<?php dynamic_sidebar('contact-text'); ?>
-			<?php endif; ?>
+<div id="address">
+	<div class="address-bar row">
+		<div class="large-8 columns">
+		<?php
+			//Let's define some variables
+	    	$address = listing_address_get_meta( 'listing_address_property_address_in_full' );
+	    	$postal = listing_address_get_meta( 'listing_address_postal_code' );
+	    	$country = listing_address_get_meta( 'listing_address_property_country' );
+	    	$find = array('/\s+/','/,/');
+	    	$replace = array('+','%2C');
+		    $searchString = strtolower( preg_replace($find, $replace, $address) );
+			?>
+			<i class="fa fa-map-marker fa-2x"></i> <a target="_blank" href="https://www.google.com/maps?&q=<?php echo $searchString ?>"><?php echo $address, " ", $postal, " ", $country; ?></a>
 		</div>
+		<?php if ( ! dynamic_sidebar('contact-text') ) : ?>
+			<?php dynamic_sidebar('contact-text'); ?>
+		<?php endif; ?>
 	</div>
+</div>
+
+<div class="info-icons row">
+	<?php get_template_part('parts/info-icons'); ?>
+</div>
 
 <div class="row">
 	<div class="large-12 columns" role="main">
