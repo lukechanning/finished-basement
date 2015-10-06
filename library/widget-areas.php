@@ -48,6 +48,16 @@ function foundationpress_sidebar_widgets() {
 	  'before_title' => '<h2>',
 	  'after_title' => '</h2>',
 	));
+	
+	register_sidebar(array(
+	  'id' => 'contact-text',
+	  'name' => __( 'Listing Contact Info', 'foundationpress' ),
+	  'description' => __( 'Add the text you want to appear within the listing page itself', 'foundationpress' ),
+	  'before_widget' => '<div class="large-4 columns"><div class="contact-block">',
+	  'after_widget' => '</div></div></div></div>',
+	  'before_title' => '<div class="content"><div class="header"><h2>',
+	  'after_title' => '</h2></div><divider></divider>',
+	));
 
 	register_sidebar(array(
 	  'id' => 'footer-widgets',

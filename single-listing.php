@@ -12,9 +12,9 @@ get_header(); ?>
 <?php get_template_part( 'parts/featured-image' ); ?>
 
 	<div id="address">
-		<div class="row">
-			<div class="address-bar">
-				<?php
+		<div class="address-bar row">
+			<div class="large-8 columns">
+					<?php
 				//Let's define some variables
 		    	$address = listing_address_get_meta( 'listing_address_property_address_in_full' );
 		    	$postal = listing_address_get_meta( 'listing_address_postal_code' );
@@ -25,6 +25,9 @@ get_header(); ?>
 				?>
 				<i class="fa fa-map-marker fa-2x"></i> <a target="_blank" href="https://www.google.com/maps?&q=<?php echo $searchString ?>"><?php echo $address, " ", $postal, " ", $country; ?></a>
 			</div>
+			<?php if ( ! dynamic_sidebar('contact-text') ) : ?>
+				<?php dynamic_sidebar('contact-text'); ?>
+			<?php endif; ?>
 		</div>
 	</div>
 
