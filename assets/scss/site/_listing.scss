@@ -23,11 +23,16 @@ body.single-listing {
         .large-4 {
             position: relative;
             .contact-block {
-                position: absolute;
-                top: -2rem;
-                background-color: $oil;
-                text-align: center;
-                padding: 1rem;
+                margin: 2rem 0;
+                text-align: left;
+                @media #{$large-up} {
+                    text-align: center;
+                    background-color: $oil;
+                    position: absolute;
+                    top: -2rem;
+                    padding: 1rem;
+                    margin: 0;
+                }
                 .header {
                     h2 {
                         color: $white;
@@ -36,9 +41,12 @@ body.single-listing {
                 divider {
                     width: 85%;
                     display: block;
-                    margin: 1rem auto;
+                    margin: 1rem 0;
                     height: 2px;
                     background-color: white;
+                    @media #{$large-up} {
+                        margin: 1rem auto;
+                    }
                 }
                 .content {
                 }

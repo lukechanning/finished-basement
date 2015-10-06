@@ -14,7 +14,7 @@ get_header(); ?>
 	<div id="address">
 		<div class="address-bar row">
 			<div class="large-8 columns">
-					<?php
+			<?php
 				//Let's define some variables
 		    	$address = listing_address_get_meta( 'listing_address_property_address_in_full' );
 		    	$postal = listing_address_get_meta( 'listing_address_postal_code' );
