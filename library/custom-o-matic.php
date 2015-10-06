@@ -74,7 +74,7 @@
     		'label'               => __( 'Listing', 'text_domain' ),
     		'description'         => __( 'Listing posts used to display homes and properties', 'text_domain' ),
     		'labels'              => $labels,
-    		'supports'            => array( 'title', 'editor', 'author', 'thumbnail', 'custom-fields', ),
+    		'supports'            => array( 'title', 'editor', 'author', 'thumbnail' ),
     		'taxonomies'          => array( 'category', 'location' ),
     		'hierarchical'        => false,
     		'public'              => true,
@@ -166,16 +166,20 @@
     	<p>
     		<label for="property_information_squarefeet"><?php _e( 'Squarefeet', 'property_information' ); ?></label><br>
     		<input type="text" name="property_information_squarefeet" id="property_information_squarefeet" value="<?php echo property_information_get_meta( 'property_information_squarefeet' ); ?>">
-    	</p>	<p>
+    	</p>
+    	<p>
     		<label for="property_information_bedrooms"><?php _e( 'Bedrooms', 'property_information' ); ?></label><br>
     		<input type="text" name="property_information_bedrooms" id="property_information_bedrooms" value="<?php echo property_information_get_meta( 'property_information_bedrooms' ); ?>">
-    	</p>	<p>
+    	</p>
+    	<p>
     		<label for="property_information_bathrooms"><?php _e( 'Bathrooms', 'property_information' ); ?></label><br>
     		<input type="text" name="property_information_bathrooms" id="property_information_bathrooms" value="<?php echo property_information_get_meta( 'property_information_bathrooms' ); ?>">
-    	</p>	<p>
+    	</p>
+    	<p>
     		<label for="property_information_price"><?php _e( 'Price', 'property_information' ); ?></label><br>
     		<input type="text" name="property_information_price" id="property_information_price" value="<?php echo property_information_get_meta( 'property_information_price' ); ?>">
-    	</p>	<p>
+    	</p>
+    	<p>
     		<label for="property_information_more_info"><?php _e( 'More Info', 'property_information' ); ?></label><br>
     		<textarea name="property_information_more_info" id="property_information_more_info" ><?php echo property_information_get_meta( 'property_information_more_info' ); ?></textarea>
     	
@@ -207,5 +211,70 @@
     	Usage: property_information_get_meta( 'property_information_price' )
     	Usage: property_information_get_meta( 'property_information_more_info' )
     */
+    
+    //Let's generate some rudimentary location data that we'll use to pull Google data
+    
+    function listing_address_get_meta( $value ) {
+    	global $post;
+    
+    	$field = get_post_meta( $post->ID, $value, true );
+    	if ( ! empty( $field ) ) {
+    		return is_array( $field ) ? stripslashes_deep( $field ) : stripslashes( wp_kses_decode_entities( $field ) );
+    	} else {
+    		return false;
+    	}
+    }
+    
+    function listing_address_add_meta_box() {
+    	add_meta_box(
+    		'listing_address-listing-address',
+    		__( 'Listing Address', 'listing_address' ),
+    		'listing_address_html',
+    		'listing',
+    		'normal',
+    		'high'
+    	);
+    }
+    add_action( 'add_meta_boxes', 'listing_address_add_meta_box' );
+    
+    function listing_address_html( $post) {
+    	wp_nonce_field( '_listing_address_nonce', 'listing_address_nonce' ); ?>
+    
+    	<p>Add some location information here for the listing to appear within the theme.</p>
+    
+    	<p>
+    		<label for="listing_address_property_address_in_full"><?php _e( 'Property Address in Full', 'listing_address' ); ?></label><br>
+    		<textarea name="listing_address_property_address_in_full" id="listing_address_property_address_in_full" ><?php echo listing_address_get_meta( 'listing_address_property_address_in_full' ); ?></textarea>
+    	
+    	</p>	<p>
+    		<label for="listing_address_postal_code"><?php _e( 'Postal Code', 'listing_address' ); ?></label><br>
+    		<input type="text" name="listing_address_postal_code" id="listing_address_postal_code" value="<?php echo listing_address_get_meta( 'listing_address_postal_code' ); ?>">
+    	</p>	<p>
+    		<label for="listing_address_property_country"><?php _e( 'Property Country', 'listing_address' ); ?></label><br>
+    		<input type="text" name="listing_address_property_country" id="listing_address_property_country" value="<?php echo listing_address_get_meta( 'listing_address_property_country' ); ?>">
+    	</p><?php
+    }
+    
+    function listing_address_save( $post_id ) {
+    	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
+    	if ( ! isset( $_POST['listing_address_nonce'] ) || ! wp_verify_nonce( $_POST['listing_address_nonce'], '_listing_address_nonce' ) ) return;
+    	if ( ! current_user_can( 'edit_post', $post_id ) ) return;
+    
+    	if ( isset( $_POST['listing_address_property_address_in_full'] ) )
+    		update_post_meta( $post_id, 'listing_address_property_address_in_full', esc_attr( $_POST['listing_address_property_address_in_full'] ) );
+    	if ( isset( $_POST['listing_address_postal_code'] ) )
+    		update_post_meta( $post_id, 'listing_address_postal_code', esc_attr( $_POST['listing_address_postal_code'] ) );
+    	if ( isset( $_POST['listing_address_property_country'] ) )
+    		update_post_meta( $post_id, 'listing_address_property_country', esc_attr( $_POST['listing_address_property_country'] ) );
+    }
+    add_action( 'save_post', 'listing_address_save' );
+    
+    /*
+    	Usage: listing_address_get_meta( 'listing_address_property_address_in_full' )
+    	Usage: listing_address_get_meta( 'listing_address_postal_code' )
+    	Usage: listing_address_get_meta( 'listing_address_property_country' )
+    */
+
+
 
 ?>

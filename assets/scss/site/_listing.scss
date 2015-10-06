@@ -1,0 +1,25 @@
+body.single-listing {
+    
+    //Let's adjust the featured hero
+    #featured-hero {
+        height: rem-calc(500);
+        margin-bottom: 0;
+    }
+    
+    //Now to His Majesty the Address Bar
+    #address {
+        margin-bottom: 2rem;
+        padding: 30px 0;
+        background-color: $red;
+        .address-bar {
+            a, p, i {
+                color: $white;
+                letter-spacing: 1.5px;
+                text-decoration: none;
+                text-transform: uppercase;
+                text-shadow: 0px -2px 0px $oil;
+            }
+        }
+    }
+        
+}
