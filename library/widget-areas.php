@@ -36,7 +36,7 @@ function foundationpress_sidebar_widgets() {
 	  'before_widget' => '<div class="large-4 medium-12 buttons columns">',
 	  'after_widget' => '</div>',
 	  'before_title' => '<h2>',
-	  'after_title' => '</h2>',
+	  'after_title' => '</h2>'
 	));
 
 	register_sidebar(array(

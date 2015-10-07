@@ -25,9 +25,11 @@
                     <?php the_post_thumbnail('medium'); ?>
                     
                     <div class="card-content">
+                        
                         <div class="post-icon">
                             <?php echo get_avatar($authID, "50px"); ?>
                         </div>
+                       
                        <?php get_template_part('parts/info-icons'); ?>
                        
                         <p class="post-author">Agent <a href="<?php $author ?>"><?php the_author(); ?></a></p>
