@@ -53,8 +53,6 @@ get_header(); ?>
                     echo get_avatar($authID, "100px");
                 endif;
                 ?>
-			</div>
-		</div>
 		<div class="small-9 columns">
 	        <?php echo '<h4>listing agent<divider></divider></h4><h2 class="author">'. $author .'</h2>'; ?>
 	        <?php get_template_part('parts/info-icons'); ?>
