@@ -133,6 +133,43 @@
     }
     add_action( 'init', 'basement_location', 0 );
     
+    //Add taxonomy for Status
+    
+    function listing_status() {
+    
+    	$labels = array(
+    		'name'                       => _x( 'Status', 'Taxonomy General Name', 'text_domain' ),
+    		'singular_name'              => _x( 'Status', 'Taxonomy Singular Name', 'text_domain' ),
+    		'menu_name'                  => __( 'Status', 'text_domain' ),
+    		'all_items'                  => __( 'All Statuses', 'text_domain' ),
+    		'parent_item'                => __( 'Parent Status', 'text_domain' ),
+    		'parent_item_colon'          => __( 'Parent Status:', 'text_domain' ),
+    		'new_item_name'              => __( 'New Status', 'text_domain' ),
+    		'add_new_item'               => __( 'Add New Status', 'text_domain' ),
+    		'edit_item'                  => __( 'Edit Status', 'text_domain' ),
+    		'update_item'                => __( 'Update Status', 'text_domain' ),
+    		'view_item'                  => __( 'View Status', 'text_domain' ),
+    		'separate_items_with_commas' => __( 'Separate Statuses with Commans', 'text_domain' ),
+    		'add_or_remove_items'        => __( 'Add or remove statuses', 'text_domain' ),
+    		'choose_from_most_used'      => __( 'Choose From Most Used', 'text_domain' ),
+    		'popular_items'              => __( 'Popular Statuses', 'text_domain' ),
+    		'search_items'               => __( 'Search Status', 'text_domain' ),
+    		'not_found'                  => __( 'No Status Found', 'text_domain' ),
+    	);
+    	$args = array(
+    		'labels'                     => $labels,
+    		'hierarchical'               => true,
+    		'public'                     => true,
+    		'show_ui'                    => true,
+    		'show_admin_column'          => true,
+    		'show_in_nav_menus'          => true,
+    		'show_tagcloud'              => true,
+    	);
+    	register_taxonomy( 'listing-status', array( 'listing' ), $args );
+    
+    }
+    add_action( 'init', 'listing_status', 0 );
+    
 //Now let's add our custom meta boxes
     
     function property_information_get_meta( $value ) {

@@ -104,3 +104,60 @@ body.single-listing {
     }
         
 }
+
+//Now let's manage our listings wall
+
+body.page-template-listing-wall {
+    article {
+        clear: both;
+        margin-bottom: 34px;
+        background-color: $white;
+        border-radius: 4px;
+        box-shadow: 0 1px 1px rgba(0,0,0,.05);
+        border: 1px solid #ddd;
+        overflow: hidden;
+    }
+    
+    //Hit the panel body content
+    .panel-body, .panel-footer {
+        padding: 1rem;
+    }
+    
+    .panel-footer {
+        text-align: center;
+        background-color: #ddd;
+        border-top: 1px solid #ddd;
+        .info-icons {
+            span {
+                color: #646464;
+                padding: 1rem;
+            }
+        }
+    }
+    
+    .panel-body {
+        @media only screen and (max-width:1024px) {
+            text-align: center;
+        }
+        .button {
+            display: block;
+            width: 85%;
+            float: left;
+            background-color: $red;
+            @media only screen and (max-width:1024px) {
+                margin: 0 auto;
+            }
+            &:hover {
+                background-color: $oil;
+            }
+        }
+        .entry-content {
+            h4 {
+                border-bottom: 2px solid $red;
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+        }
+    }
+    
+}
