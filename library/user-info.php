@@ -34,6 +34,15 @@ function custom_user_info( $user ) { ?>
 				<span class="description">Please enter your preferred contact email.</span>
 			</td>
 		</tr>
+		<!-- LinkedIn -->
+		<tr>
+			<th><label for="linkedin">LinkedIn</label></th>
+
+			<td>
+				<input type="text" name="linkedin" id="linkedin" value="<?php echo esc_attr( get_the_author_meta( 'linkedin', $user->ID ) ); ?>" class="regular-text" /><br />
+				<span class="description">Please enter your LinkedIn username.</span>
+			</td>
+		</tr>
         <!-- Twitter -->
 		<tr>
 			<th><label for="twitter">Twitter</label></th>
@@ -68,6 +77,7 @@ function save_custom_user_info( $user_id ) {
 	update_usermeta( $user_id, 'cell', $_POST['cell'] );
 	update_usermeta( $user_id, 'phone', $_POST['phone'] );
 	update_usermeta( $user_id, 'email', $_POST['email'] );
+	update_usermeta( $user_id, 'linkedin', $_POST['linkedin'] );
 	update_usermeta( $user_id, 'twitter', $_POST['twitter'] );
 	update_usermeta( $user_id, 'facebook', $_POST['facebook'] );
 }

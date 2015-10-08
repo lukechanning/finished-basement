@@ -1,0 +1,35 @@
+.author {
+    width: 49%;
+    
+    .author-card {
+        clear: both;
+        margin-bottom: rem-calc(34px) !important;
+        background-color: $white;
+        border-radius: rem-calc(4px);
+        box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+        border: 1px solid #ddd;
+        overflow: hidden;
+        .author-photo {
+            margin-left: -1rem;
+            img {
+                width: 200px;
+                height: 200px;
+            }
+        }
+        .author-info {
+            
+        }
+        .author-social {
+            padding: 1rem;
+            background-color: $red;
+            i, a, p {
+                color: $white;
+            }
+            i {
+                float: left;
+                padding-right: rem-calc(8px);
+            }
+        }
+    }
+
+}

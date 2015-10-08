@@ -27,13 +27,13 @@
                     <div class="card-content">
                         
                         <div class="post-icon">
-                            	<?php
+                        <?php
 	                        if ( userphoto_exists($authID) ) :
 	                            userphoto_the_author_thumbnail();
                             else:
                                 echo get_avatar($authID, "50px");
                             endif;
-                            ?>
+                        ?>
                         </div>
                        
                        <?php get_template_part('parts/info-icons'); ?>
