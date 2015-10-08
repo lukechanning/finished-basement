@@ -51,4 +51,10 @@ require_once( 'library/protocol-relative-theme-assets.php' );
 /** Load totally custom aspects */
 require_once( 'library/custom-o-matic.php' );
 
+//Then load our user profile stuff
+require_once( 'library/user-photos.php' );
+
+//Then get our custom user info fields
+require_once( 'library/user-info.php' );
+
 ?>

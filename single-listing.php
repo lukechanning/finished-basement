@@ -46,9 +46,13 @@ get_header(); ?>
 	<div class="info row">
 		<div class="small-3 columns">
 	        <div class="info-author">
-		        <?php
-		        echo get_avatar($authID, "100px");
-		        ?>
+				<?php
+                if ( userphoto_exists($authID) ) :
+                    userphoto_the_author_photo();
+                else:
+                    echo get_avatar($authID, "100px");
+                endif;
+                ?>
 			</div>
 		</div>
 		<div class="small-9 columns">

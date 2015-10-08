@@ -105,6 +105,37 @@ body.single-listing {
         
 }
 
+//Tweak those sort settings
+
+.sort-type {
+    border-bottom: 1px solid #bdbdbd;
+    margin-bottom: 2rem !important;
+    .sort-title {
+        color: darken(#bdbdbd, 15%);
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 1.3rem;
+    }
+    .sort-links {
+        float: right;
+        list-style: none;
+        margin-bottom: 0 !important;
+        .sort-link {
+            float: left;
+            padding: rem-calc(7px) 1rem 0 1rem;
+            color: darken(#bdbdbd, 15%) !important;
+            font-weight: 700;
+            text-transform: uppercase;
+            a {
+                color: darken(#bdbdbd, 15%) !important;
+            }
+            &:hover {
+                border-bottom: 2px solid lighten($oil,25%);
+            }
+        }
+    }
+}
+
 //Now let's manage our listings wall
 
 body.page-template-listing-wall {
