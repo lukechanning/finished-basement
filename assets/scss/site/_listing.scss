@@ -85,7 +85,12 @@ body.single-listing {
     
     //Now to the content 
     
+    .main {
+        padding: 1rem 0;
+    }
+    
     .entry-content {
+        padding-right: 2rem;
         .featured {
             margin: 1rem auto;
         }
@@ -102,7 +107,24 @@ body.single-listing {
             margin-top: 40px;
         }
     }
-        
+    
+    //Sidebar it up, yo!
+    .sidebar {
+        margin-top: 12rem;
+        .sidebar-title {
+            color: #454545;
+            display: inline-block;
+            font-weight: 900;
+            font-size: 16px;
+            letter-spacing: 4px;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+            line-height: 1rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid $red;
+        }
+    }
+    
 }
 
 //Tweak those sort settings
