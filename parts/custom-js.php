@@ -1,5 +1,4 @@
 <!-- Let's add the Owl Carousel -->
-<script src="/wp-content/themes/finished-basement/assets/components/owl.carousel/dist/owl.carousel.min.js"></script>
 <script type="text/javascript">
     	jQuery('.owl-carousel').owlCarousel({
             loop:true,
